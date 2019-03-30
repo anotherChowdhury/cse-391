@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Details</title>
+</head>
+<body>
+<div>
+    {% if item %}
+        <p>
+            Hello! Thanks for your Inquiry!
+            Here is the detail for the product(s):
+            Price - ${{ item.price }}
+            Tax (in Canada) - {{ item.tax }}<br> + <br>Shipping ({{ item.vendor }}) - {{ item.shipping_cost }}
+            ------------------------------
+            Total - ${{ item.total }}
+            In BDT ({{ item.conversion_rate }}TK/CAD$) - TK {{ item.total_in_bdt }}<br> + <br>Weight Charge (To be Added
+            After Product Arrival to BD)
+            For products <100g = 150TK Flat'
+            For products >100g up to 2kg = 160TK/100g
+            For products >2kg = 1700TK/Kg
+            ----------------------------------
+            Advance Required - TK {{ item.advanced_amount_required }}
+            Expected Shipment Arrival: {{ item.week }} Weeks Minimum
+            ------------------------------
+        </p>
+        {{ item.__repr__() }}
+    {% endif %}
+</div>
+</body>
+</html>
