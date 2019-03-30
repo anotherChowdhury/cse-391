@@ -1,0 +1,34 @@
+<html>
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+	<h1>Get Your Price Quote</h1>
+
+
+<body>
+
+ <img src="images/Shoptobd.png" alt="Logo"> 
+	
+
+<form id="linkForm" action="{{ url_for('handle_data') }}" method="post">
+  Link<br>
+  <input type="text" name="link"><br>
+</form> 
+
+ <button type="submit" form="linkForm" value="Submit">Get Price Quote</button> 
+
+ <form>
+       <fieldset>
+          <p>
+             <label>Select Website</label>
+             <select id = "myList">
+               <option value = "1">Amazon Prime</option>
+               <option value = "2">Aldo Canada</option>
+               <option value = "3">Fossil Canada</option>
+             </select>
+          </p>
+       </fieldset>
+
+
+</body>
+</html>
